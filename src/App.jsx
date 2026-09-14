@@ -1,20 +1,16 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import "./App.css";
-import Home from "./Home.jsx";
-import LoginPage from "./Login.jsx";
 
-function App() {
+import Home from "./Home";
+import LoginPage from "./Login";
+
+export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/login" element={<LoginPage />} />
-
         <Route path="/" element={<Home />} />
-
+        <Route path="/login" element={<LoginPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
   );
 }
-
-export default App;
